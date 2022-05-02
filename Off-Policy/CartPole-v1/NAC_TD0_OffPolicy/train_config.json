@@ -1,0 +1,93 @@
+{
+    "env": "CartPole-v1",
+    "gamma": 0.99,
+    "iterations": 1000,
+    "episode_length": null,
+    "estimation_samples": 20,
+    "numpy_seed": 1,
+    "environment_seed": 1,
+    "pytorch_seed": 1,
+    "render": false,
+    "rewards_path": "cartpole_rewards.json",
+    "record": false,
+    "recording_path": "cartpole_recording/",
+    "recording_frequency": 10,
+    "actor": {
+        "hidden_layer_neurons": [
+            16
+        ],
+        "learning_rate": 0.0005,
+        "load": false,
+        "load_path": "model/actor_final.pkl",
+        "initial_save_path": "model/actor_initial.pkl",
+        "final_save_path": "model/actor_final.pkl"
+    },
+    "advantage_critic": {
+        "learning_rate": 0.01,
+        "load": false,
+        "load_path": "model/a_critic_final.pkl",
+        "initial_save_path": "model/a_critic_initial.pkl",
+        "final_save_path": "model/a_critic_final.pkl"
+    },
+    "value_critic": {
+        "hidden_layer_neurons": [
+            64,
+            64
+        ],
+        "learning_rate": 0.01,
+        "load": false,
+        "load_path": "model/v_critic_final.pkl",
+        "initial_save_path": "model/v_critic_initial.pkl",
+        "final_save_path": "model/v_critic_final.pkl"
+    },
+    "w": {
+        "hidden_layer_neurons": [
+            16
+        ],
+        "learning_rate": 0.01,
+        "load": false,
+        "load_path": "model/w_final.pkl",
+        "initial_save_path": "model/w_initial.pkl",
+        "final_save_path": "model/w_final.pkl"
+    },
+    "y": {
+        "hidden_layer_neurons": [
+            16
+        ],
+        "learning_rate": 0.01,
+        "load": false,
+        "load_path": "model/y_final.pkl",
+        "initial_save_path": "model/y_initial.pkl",
+        "final_save_path": "model/y_final.pkl"
+    },
+    "kernel_sigma": 1,
+    "random_behaviour_probability": 1,
+    "behaviour_policy_path": "behaviour_policy.pkl",
+    "learning_rate_scheduler": {
+        "required": false,
+        "schedule": [
+            [
+                [
+                    400,
+                    430
+                ],
+                {
+                    "lr_A": 1e-04,
+                    "lr_A_C": 1e-04,
+                    "lr_V_C": 1e-03
+                }
+            ],
+            [
+                [
+                    430,
+                    500
+                ],
+                {
+                    "lr_A": 1e-06,
+                    "lr_A_C": 1e-06,
+                    "lr_V_C": 1e-05
+                }
+            ]
+        ]
+    }
+}

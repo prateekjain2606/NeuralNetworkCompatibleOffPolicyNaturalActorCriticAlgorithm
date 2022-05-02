@@ -1,0 +1,75 @@
+{
+    "env": "MountainCar-v0",
+    "gamma": 0.99,
+    "lambda": 0.7,
+    "iterations": 1000,
+    "episode_length": 10000,
+    "estimation_samples": 40,
+    "numpy_seed": 1,
+    "environment_seed": 1,
+    "pytorch_seed": 1,
+    "render": false,
+    "rewards_path": "mountaincar_rewards.json",
+    "record": false,
+    "recording_path": "mountaincar_recording/",
+    "recording_frequency": 10,
+    "actor": {
+        "hidden_layer_neurons": [
+            32
+        ],
+        "learning_rate": 0.0001,
+        "load": false,
+        "load_path": "model/actor_final.pkl",
+        "initial_save_path": "model/actor_initial.pkl",
+        "final_save_path": "model/actor_final.pkl"
+    },
+    "critic": {
+        "hidden_layer_neurons": [
+            32,
+            32
+        ],
+        "learning_rate": 0.005,
+        "load": false,
+        "load_path": "model/critic_final.pkl",
+        "initial_save_path": "model/critic_initial.pkl",
+        "final_save_path": "model/critic_final.pkl"
+    },
+    "w": {
+        "hidden_layer_neurons": [
+            16
+        ],
+        "learning_rate": 0.01,
+        "load": false,
+        "load_path": "model/w_final.pkl",
+        "initial_save_path": "model/w_initial.pkl",
+        "final_save_path": "model/w_final.pkl"
+    },
+    "y": {
+        "hidden_layer_neurons": [
+            16
+        ],
+        "learning_rate": 0.01,
+        "load": false,
+        "load_path": "model/y_final.pkl",
+        "initial_save_path": "model/y_initial.pkl",
+        "final_save_path": "model/y_final.pkl"
+    },
+    "kernel_sigma": 4,
+    "random_behaviour_probability": 1,
+    "behaviour_policy_path": "behaviour_policy.pkl",
+    "learning_rate_scheduler": {
+        "required": true,
+        "schedule": [
+            [
+                [
+                    -670,
+                    -100
+                ],
+                {
+                    "lr_A": 1e-06,
+                    "lr_C": 0.005
+                }
+            ]   
+        ]
+    }
+}
