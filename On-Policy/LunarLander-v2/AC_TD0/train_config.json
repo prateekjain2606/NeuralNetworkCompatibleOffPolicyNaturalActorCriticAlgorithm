@@ -1,0 +1,60 @@
+{
+    "env": "LunarLander-v2",
+    "gamma": 0.99,
+    "iterations": 1000,
+    "episode_length": null,
+    "numpy_seed": 1,
+    "environment_seed": 1,
+    "pytorch_seed": 1,
+    "render": false,
+    "rewards_path": "lunarlander_rewards.json",
+    "record": false,
+    "recording_path": "lunarlander_recording/",
+    "recording_frequency": 10,
+    "actor": {
+        "hidden_layer_neurons": [
+            16
+        ],
+        "learning_rate": 0.001,
+        "load": false,
+        "load_path": "model/actor_final.pkl",
+        "initial_save_path": "model/actor_initial.pkl",
+        "final_save_path": "model/actor_final.pkl"
+    },
+    "critic": {
+        "hidden_layer_neurons": [
+            64,
+            64
+        ],
+        "learning_rate": 0.005,
+        "load": false,
+        "load_path": "model/critic_final.pkl",
+        "initial_save_path": "model/critic_initial.pkl",
+        "final_save_path": "model/critic_final.pkl"
+    },
+    "learning_rate_scheduler": {
+        "required": true,
+        "schedule": [
+            [
+                [
+                    180,
+                    200
+                ],
+                {
+                    "lr_A": 0.0001,
+                    "lr_C": 0.0005
+                }
+            ],
+            [
+                [
+                    200,
+                    220
+                ],
+                {
+                    "lr_A": 1e-05,
+                    "lr_C": 5e-05
+                }
+            ]
+        ]
+    }
+}
